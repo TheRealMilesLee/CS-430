@@ -1,0 +1,6 @@
+Order Allow,Deny
+Allow from all
+
+<FilesMatch ".+\.phps$">
+  Require all granted
+</FilesMatch>

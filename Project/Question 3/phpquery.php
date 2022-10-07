@@ -12,7 +12,7 @@ $db = 'Team_Member'; //name of db
 $con = mysqli_connect($host, $name, $pwd) or die("connection failed");
 mysqli_select_db($con, $db) or die("db selection failed");
 
-$result = mysqli_query($con, "SELECT * FROM TeamMember"); //personnel is the name of table
+$result = mysqli_query($con, "select TeamMember.Student_ID, TeamMember.First_Name, TeamMember.Last_Name, SecretPlace.Lat, SecretPlace.long_param as Long from TeamMember join SecretPlace where TeamMember.Student_ID = SecretPlace.Student_ID;");
 
 // Going to parse the result set
 while ($row = mysqli_fetch_assoc($result))

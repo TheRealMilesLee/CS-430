@@ -57,7 +57,6 @@ public class MainActivity extends AppCompatActivity
                     for (int index = 0; index < data.length(); index++)
                     {
                         JSONObject JSONDataReceive = data.getJSONObject(index);
-                        Log.d("Test", JSONDataReceive.getString("Student_ID"));
                         // These are mapping to column names
                         String Student_ID = JSONDataReceive.getString(
                                 "Student_ID");
@@ -65,8 +64,12 @@ public class MainActivity extends AppCompatActivity
                                 "First_Name");
                         String Last_Name = JSONDataReceive.getString(
                                 "Last_Name");
+                        String Lat = JSONDataReceive.getString(
+                                "Lat");
+                        String Long = JSONDataReceive.getString(
+                                "long_param");
                         txt.append(
-                                Student_ID + " " + First_Name + " " + Last_Name + " \n");
+                                Student_ID + " " + First_Name + " " + Last_Name + " " + Lat + " " + Long + " \n");
                     }
                 } catch (JSONException e)
                 {

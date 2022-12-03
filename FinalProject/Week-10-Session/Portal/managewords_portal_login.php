@@ -13,6 +13,7 @@ error_reporting(E_ALL);
 ini_set('display_errors', '1');
 session_start();
 
+/* Connecting to the database. */
 require '../Database/dblogin.php';
 $db = new PDO(
   "mysql:host=$db_host;dbname=hl3265;charset=utf8mb4",
@@ -23,8 +24,6 @@ $db = new PDO(
     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
   )
 );
-
-
 $already_logged_in = false;
 
 

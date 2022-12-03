@@ -1,0 +1,5 @@
+print('use hl3265;')
+print("insert into part (part) values ('adjective');" )
+print("insert into part (part) values ('adverb');" )
+print("insert into part (part) values ('noun');" )
+print("insert into part (part) values ('verb');" )

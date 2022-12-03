@@ -1,0 +1,59 @@
+body
+{
+  width: 90%;
+  font-family: 'Helvetica Neue', Noto Sans, sans-serif;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background-image: url("../Resources/Vocabulary.jpg");
+  background-position-x:30%;
+  background-size: 140%;
+  background-repeat: no-repeat;
+}
+
+input
+{
+  outline: none;
+  background-color: #e7e8e3;
+}
+
+.vocabulary
+{
+  border: 3px solid black;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 5px;
+  grid-row: 1/3;
+}
+
+.display_word
+{
+  height: 650px;
+  width: 100%;
+  overflow-y: scroll;
+}
+
+.manage_account
+{
+  text-align: center;
+  border: 3px solid black;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 5px;
+}
+
+.prompt
+{
+  font-family: cursive, fantasy;
+  font-size: 16px;
+}
+
+.submit
+{
+  padding: 15px 15px;
+  width: 100%;
+  border-radius: 15px;
+  color: white;
+  background-color:cadetblue;
+}

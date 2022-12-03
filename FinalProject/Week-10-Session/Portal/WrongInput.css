@@ -1,0 +1,28 @@
+body
+{
+  width: 90%;
+  font-family: 'Helvetica Neue', Noto Sans, sans-serif;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background-image: url("../Resources/Login_Background.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.submit
+{
+  padding: 15px 15px;
+  width: 100%;
+  border-radius: 15px;
+  color: white;
+  background-color:cadetblue;
+}
+
+.prompt
+{
+  font-family: cursive,  'Helvetica Neue', Noto Sans;
+  text-align: center;
+  font-size: 16px;
+}

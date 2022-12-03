@@ -1,0 +1,235 @@
+/**
+* Hengyi Li
+* This is the style sheet for the managewords
+* Version: 0.2.5.3
+*/
+body
+{
+  font-family: sans-serif, monospace, serif;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background-image: url("../Resources/Admin_Background.jpg");
+  /*background-color: #b1adb1;*/
+  background-position-x: 25%;
+  background-size: 132%;
+  background-repeat: no-repeat;
+}
+
+p
+{
+  font-family: sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: normal;
+  text-align: center;
+}
+input
+{
+  outline: none;
+  background-color: #d1cbd1; /* #b1adb1 */
+}
+
+a
+{
+  text-decoration: none;
+  color: white;
+}
+
+form
+{
+  padding: 15px;
+  text-align: center;
+}
+#intro_header
+{
+  padding: 18px;
+  margin: 5px;
+  text-align:center;
+  padding-top: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.quiz_button
+{
+  text-align:center;
+}
+.word_manager
+{
+  font-family: sans-serif;
+  font-size: 30px;
+  font-style: italic;
+  font-weight: bold;
+  text-align: center;
+}
+
+.prompt
+{
+  font-family: cursive, fantasy;
+  font-size: 16px;
+  font-style: italic;
+  font-weight: normal;
+  text-align: center;
+  
+}
+
+#add_word
+{
+  border: 4px solid black;
+  border-radius: 5px;
+  padding: 15px;
+  margin: 5px;
+}
+
+.subtitle
+{
+  font-family: cursive, serif;
+  font-style: italic;
+  font-size: 20px;
+  text-align: center;
+  font-weight: bold;
+  margin: 0px 0px 10px 0px
+}
+
+.prompt_user
+{
+  font-family: sans-serif, serif;
+  font-size: 16px;
+  font-weight: normal;
+  text-align: end;
+}
+
+
+.warning_sign
+{
+  font-size: 10px;
+  color: red;
+}
+
+.warning_prompt_style
+{
+    font-size: 10px;
+    color: red;
+}
+
+.pass_sign_style
+{
+    font-size: 15px;
+    color:green;
+}
+
+#delete_word
+{
+  border: 4px solid black;
+  border-radius: 5px;
+  padding: 15px;
+  margin: 5px;
+  grid-column: 1/2;
+  grid-row: 2/3;
+  /*padding-top: 6px;*/
+}
+
+#display
+{
+  height: 400px;
+  width: 100%;
+  overflow-y: scroll;
+}
+
+.word_list
+{
+  font-family: sans-serif, serif;
+  font-size: 15px;
+  font-weight: normal;
+  color:black;
+  text-align:left;
+
+}
+
+.name_and_password
+{
+  text-align: center;
+  border: 4px solid black;
+  border-radius: 5px;
+  margin: 15px;
+}
+.search_delete_box
+{
+	text-align:center;
+}
+
+.user_manager
+{
+  border: 2px solid black;
+  border-radius: 5px;
+}
+/*.username_login
+{
+  background-color: #b1adb1;
+}*/
+
+/*.nickname
+{
+  background-color: #b1adb1;
+}*/
+
+.password
+{
+  /*background-color: #b1adb1;*/
+  margin-bottom: 15px;
+}
+
+.submit
+{
+  width: 25%;
+  text-align:center;
+  border-radius: 15px;
+  color: white;
+  background-color: cadetblue;
+}
+
+.input
+{
+  border: none;
+  font-family: 'Helvetica Neue', Noto Sans, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 21px;
+  width: 85%;
+  height: 25px;
+}
+
+.logout_button
+{
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.input_label
+{
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .5px;
+  top: 14px;
+  left: 12px;
+  color: black;
+  border: none;
+  font-family: 'Helvetica Neue', sans-serif;
+}
+
+.privilege
+{
+  text-align: center;
+  border: 4px solid black;
+  border-radius: 5px;
+}
+
+.is_admin
+{
+  margin-bottom: 15px;
+}
+
+
+

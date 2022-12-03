@@ -1,0 +1,112 @@
+body
+{
+  width: 90%;
+  font-family: 'Helvetica Neue', Noto Sans, sans-serif;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background-image: url("../Resources/Login_Background.jpg");
+  background-position: 45%;
+  background-size: 100% 200%;
+  background-repeat: no-repeat;
+}
+
+input
+{
+  outline: none;
+  background-color: #e7e8e3;
+}
+
+.tobefilled
+{
+  color:cadetblue;
+}
+
+.username_login
+{
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+.username
+{
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+.nickname
+{
+  border: 2px solid black;
+  border-radius: 5px;
+}
+.password
+{
+  border: 2px solid black;
+  border-radius: 5px;
+}
+.submit
+{
+  padding: 15px 15px;
+  width: 100%;
+  border-radius: 15px;
+  color: white;
+  background-color:cadetblue;
+}
+
+.warning_sign
+{
+  font-size: 10px;
+  color: red;
+}
+
+.warning_prompt_style
+{
+  font-size: 10px;
+  color: red;
+}
+
+.pass_sign_style
+{
+  font-size: 15px;
+  color:darkslategrey;
+}
+#login
+{
+  text-align: center;
+  grid-column: 1/1;
+  grid-row:2/3;
+}
+
+#signup
+{
+  text-align: center;
+  grid-column: 1/1;
+  grid-row: 2/3;
+}
+
+.login_input
+{
+  border: none;
+  font-size: 14px;
+  font-weight:bold;
+  line-height: 21px;
+  width: 85%;
+  height:25px;
+}
+.prompt
+{
+  font-family: cursive,  'Helvetica Neue', Noto Sans;
+  text-align: center;
+  font-size: 16px;
+}
+.login_input_label
+{
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .5px;
+  top: 14px;
+  left: 12px;
+  color: black;
+  border: none;
+}

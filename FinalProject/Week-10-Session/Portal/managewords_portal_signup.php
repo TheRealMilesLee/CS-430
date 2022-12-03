@@ -11,8 +11,6 @@ error_reporting(E_ALL);
 ini_set('display_errors', '1');
 session_start();
 
-
-
 /* Connecting to the database. */
 require '../Database/dblogin.php';
 $db = new PDO(
@@ -25,7 +23,13 @@ $db = new PDO(
   )
 );
 
-
+/**
+ * It takes a database and returns an array.
+ *
+ * @param db_word The database word that you want to read into an array.
+ *
+ * @return An array of arrays.
+ */
 
 function read_database_into_array($db_word)
 {
@@ -45,6 +49,8 @@ function read_database_into_array($db_word)
   }
   return $array;
 }
+/* This is the code that is being executed when the user is not logged in and the user is trying to
+sign up. */
 
 if (!(isset($_SESSION['is_administrator'])))
 {

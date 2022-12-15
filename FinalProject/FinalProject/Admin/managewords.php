@@ -22,7 +22,6 @@ $db = new PDO(
   )
 );
 
-
 /**
  * @brief This function is to read the account information
  * from the data base into the array
@@ -47,12 +46,16 @@ function read_database_into_array($db_word)
   return $array;
 }
 
-
 // IF login as the administrator
 if (isset($_SESSION['is_administrator']))
 {
   if ($_SESSION['is_administrator'] === 1)
   {
+    /* The above code is checking to see if the user has entered a new nickname and/or password. If the
+user has entered a new nickname, the code will update the nickname in the database. If the user has
+entered a new password, the code will update the password in the database. If the user has entered
+both a new nickname and a new password, the code will update both the nickname and the password in
+the database. */
     if (isset($_POST['nickname_new']) && isset($_POST['password_new']))
     {
       $new_nickname = $_POST['nickname_new'];
@@ -142,7 +145,7 @@ if (isset($_SESSION['is_administrator']))
         <div id="intro_header">
           <h1 class="word_manager"> Word Manager </h1>
           <p class="prompt">
-            Welcome, <?= $_SESSION['screen_name'] ?>. You logged in as Administrator. <br />
+            Welcome, <?= $_SESSION['screen_name'] ?>. You logged in as Administrator.
             Here is the control panel, enjoy.
           </p>
         </div>
@@ -202,8 +205,8 @@ if (isset($_SESSION['is_administrator']))
       <div id="user_manager">
         <h2 class="word_manager"> Account Manager </h2>
         <p class="prompt">
-          Fill out the form below to change user status <br />
-          Go down below to log out or go to the quiz page <br />
+          Fill out the form below to change user status
+          Go down below to log out or go to the quiz page
           If you want to change the user privilege, look below for information.
         </p>
         <form class="name_and_password" method="post" action="managewords.php">
@@ -231,7 +234,6 @@ if (isset($_SESSION['is_administrator']))
             Submit
           </button>
         </form>
-        <!--<p class="prompt"> <b> Account Management </b> </p>-->
         <form class="privilege" method="post" action="managewords.php">
           <!-- Manage Users section -->
           <p class="subtitle"> Manage Users </p>
@@ -264,7 +266,7 @@ if (isset($_SESSION['is_administrator']))
           <p class="prompt">
             If you finished your modification, click down below to go back to the quiz
           </p>
-          <button type="submit" class="submit" id="user_page"> Quiz </button>
+          <button type="submit" class="submit" id="user_page"> Quiz <script src="../JumpJS/user_jump.js"></script></button>
         </div>
         <div class="logout_button">
           <p class="prompt"> Click to log out</p>

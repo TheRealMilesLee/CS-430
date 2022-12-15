@@ -7,11 +7,7 @@ function get_by_id(id)
 {
   return document.getElementById(id);
 }
-// Get the element by using the name
-function get_by_name(name)
-{
-  return document.getElementsByName(name);
-}
+
 
 window.onload = function ()
 {
@@ -20,6 +16,13 @@ window.onload = function ()
     get_by_id("signup_button").onclick = function ()
     {
       jump_signup();
+    };
+  }
+  if (get_by_id("login_button") !== null)
+  {
+    get_by_id("login_button").onclick = function ()
+    {
+      jump_login();
     };
   }
   if (get_by_id("password_signup_re") !== null)

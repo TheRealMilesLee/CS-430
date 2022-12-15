@@ -15,6 +15,7 @@ $db = new PDO(
   )
 );
 
+
 if (isset($_POST) && isset($_POST['delete_word']))
 {
   $delete_entry = json_decode($_POST['delete_word']);
@@ -22,6 +23,7 @@ if (isset($_POST) && isset($_POST['delete_word']))
   while ($index < count($delete_entry) - 1)
   {
     $clean_word = htmlspecialchars($delete_entry[$index]);
+    echo ($clean_word);
     $clean_part = htmlspecialchars($delete_entry[$index + 1]);
     if ($clean_part == "adjective")
     {

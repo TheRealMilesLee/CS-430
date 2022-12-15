@@ -388,10 +388,7 @@ function display(response)
     checkbox.setAttribute("name", "choice_to_delete[]");
     checkbox.setAttribute("value", index);
     let new_word_line = document.createElement("span");
-    new_word_line.innerHTML =
-      " <b><ins>" + response[index].word + "</ins>:</b> \t" +
-      "<b>(" + response[index].part + ")</b> \t" +
-      response[index].definition;
+    new_word_line.innerHTML = response[index].word + "\t" + response[index].part + "\t" + response[index].definition;
     new_word_line.classList.add("word_list");
     new_word_line.setAttribute("id", index);
     let original_div = get_by_id("display");
@@ -463,6 +460,7 @@ function delete_word_button()
 
   xhr = new XMLHttpRequest();
   const delete_string = `delete_word=${ JSON.stringify(words_to_delete) }`;
+
   xhr.open("POST", "delete_words.php");
   xhr.setRequestHeader
     ("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");

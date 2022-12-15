@@ -40,13 +40,12 @@ if (
 {
 	$search = $_GET['search'];
 	$db = new PDO(
-		"mysql:host=localhost:3306;dbname=gre_db;charset=utf8mb4",
+		"mysql:host=$db_host;dbname=hl3265;charset=utf8mb4",
 		$db_user,
 		$db_pass,
 		array(
 			PDO::ATTR_EMULATE_PREPARES => false,
-			PDO::ATTR_ERRMODE =>
-			PDO::ERRMODE_EXCEPTION
+			PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
 		)
 	);
 	$word = $db->prepare('select word.word, part.part, word.definition

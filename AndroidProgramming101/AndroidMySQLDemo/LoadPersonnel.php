@@ -3,7 +3,7 @@ $host='127.0.0.1';
 //Address of your database
 $name='root';
 // account to login to MysQL
-$pwd='TheMilesLee710#';
+$pwd=None
 //pwd
 $db='android_connection_demo';
  //name of db

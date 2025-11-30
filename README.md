@@ -1,155 +1,123 @@
-# CS-430 Project README
-## Project Overview
-CS-430 is a collection of software development projects focused on Android application development, backend services, and database operations. The repository contains multiple sub-projects including:
-- Android applications demonstrating core concepts (Activities, Fragments, SQLite/MySQL integration)
-- A comprehensive final project with admin, database, and user components
-- Spring Boot backend samples
-- SQLite database operation examples
-The project aims to provide educational resources for understanding mobile application development, database management systems, and backend services implementation.
-## File Structure
-├── AndroidProgramming101
-│   ├── ActivityAndFragment
-│   ├── ActivityJumps
-│   ├── AndroidMySQLDemo
-│   ├── AndroidSQLiteDemo
-│   └── gradle
-├── FinalProject
-│   ├── FinalProject
-│   │   ├── Admin
-│   │   ├── Database
-│   │   ├── JumpJS
-│   │   ├── Portal
-│   │   ├── Resources
-│   │   └── User
-│   └── Screenshot
-├── SQL-Sample
-│   └── SQLite_Insert
-├── SpringBoot-Sample
-│   ├── complete
-│   └── initial
-└── .gitignore
-└── LICENSE
-## Installation
-1. **Android Projects**:
-   - Install Android Studio (https://developer.android.com/studio)
-   - Open each AndroidProgramming101/.../app directory with Android Studio
-   - Ensure Android SDK is properly configured
-2. **Spring Boot Projects**:
-   - Install Java Development Kit (JDK 17+)
-   - Install Maven (https://maven.apache.org)
-   - Run `mvn spring-boot:run` in SpringBoot-Sample/complete directory
-3. **General Requirements**:
-   - Git for version control
-   - Java 17+ runtime environment
-   - Node.js (for JavaScript examples)
-## Usage
-1. **Android Applications**:
-   - Open corresponding AndroidStudio project
-   - Build and run on Android emulator/device
-   - Key features include:
-     - Activity/Fragment navigation
-     - SQLite database operations
-     - MySQL database integration
-2. **Spring Boot Backend**:
-   - Navigate to SpringBoot-Sample/complete
-   - Run `mvn spring-boot:run` to start the server
-   - Access REST APIs via browser or Postman
-3. **Database Samples**:
-   - SQLite_Insert contains SQLite database operation examples
-   - MySQL demos include database connection and query implementations
-## Dependencies
-- Android SDK (for Android projects)
-- Gradle (build system for Android projects)
-- Maven (dependency management for Spring Boot)
-- Java 17+ runtime
-- Node.js (for JavaScript samples)
-## Contribution Guidelines
-1. **Code Contributions**:
-   - Fork the repository
-   - Create a new branch for each feature
-   - Follow Android/Java coding standards
-   - Include unit tests where applicable
-2. **Documentation**:
-   - Update README.md for new features
-   - Add comments to complex code sections
-   - Maintain consistent file naming conventions
-3. **Testing**:
-   - Run existing unit tests before submitting changes
-   - Add new tests for implemented features
-   - Verify database connection stability
-## Technical Notes
-- The project contains multiple independent modules that can be developed/tested separately
-- Android projects use Gradle for build automation
-- Spring Boot projects use Maven for dependency management
-- Database operations include both SQLite (file-based) and MySQL (relational) implementations
-- JavaScript samples are primarily for frontend demonstrations
-## File Types
-- **.java**: Android application code (33 files)
-- **.php**: Backend scripts (15 files)
-- **.js**: JavaScript examples (8 files)
-- **.sql**: Database schema definitions (8 files)
-- **.xml**: Resource files (99 files)
-- **.webp/png**: UI assets (72 files)
-- **.gradle**: Build configuration files (22 files)
-## License
-This project is licensed under the terms of the [LICENSE](LICENSE) file. Please review the license terms before using or modifying any portion of this code.
+# CS-430
+
+> EN: A multi-module educational repository covering Android fundamentals, database integration (SQLite & MySQL), and a Spring Boot backend sample plus a capstone FinalProject.
+> 中文: 面向教学的多模块仓库，涵盖 Android 基础、数据库集成（SQLite 与 MySQL）以及 Spring Boot 后端示例与综合期末项目。
+
+## 📦 Modules / 模块总览
+| Module | Purpose (EN) | 说明 (中文) |
+|--------|--------------|-------------|
+| AndroidProgramming101/ActivityAndFragment | Lifecycle & UI composition | 基础生命周期与 Fragment 组件演示 |
+| AndroidProgramming101/ActivityJumps | Intent & navigation | Activity 跳转与数据传递 |
+| AndroidProgramming101/AndroidSQLiteDemo | Local persistence (SQLite) | 本地数据库增删改查示例 |
+| AndroidProgramming101/AndroidMySQLDemo | Remote DB connectivity | 远程 MySQL 通信示例（网络 + JDBC 网关/后端脚本） |
+| FinalProject/FinalProject/* | Capstone app (admin/user/portal) | 综合应用（用户/管理/资源/跳转脚本） |
+| SQL-Sample/SQLite_Insert | SQL insert pattern | SQLite 插入样例与练习 |
+| SpringBoot-Sample/complete | REST backend & config | Spring Boot 完整示例（业务 + 配置） |
+| SpringBoot-Sample/initial | Starter skeleton | 初始骨架，便于扩展 |
+
+## 🗂 Structure / 目录结构
+```
+AndroidProgramming101/
+FinalProject/
+SQL-Sample/
+SpringBoot-Sample/
+Project/           # 额外练习/阶段性项目代码
+LICENSE
+README.md
+```
+
+## 🚀 Quick Start / 快速开始
+### Android
+```bash
+# Open desired module in Android Studio
+Android Studio -> Open -> AndroidProgramming101/ActivityAndFragment
+```
+Prerequisites: Android Studio (latest), SDK Platform (>=33), Gradle wrapper included.
+
+### Spring Boot Backend
+```bash
+cd SpringBoot-Sample/complete
+./mvnw spring-boot:run   # 或 mvn spring-boot:run
+```
+Access default endpoint (example): `http://localhost:8080/api/health`
+
+### Database Samples
+SQLite demo: run app in emulator, verify database file under `data/data/<package>/databases/`
+MySQL demo: configure server URL & credentials in provided constants (建议在 `local.properties` 或环境变量中配置)。
+
+## 🔐 Configuration / 配置建议
+| Concern | Recommendation |
+|---------|---------------|
+| Secrets | 使用 `local.properties` 或 Gradle 密钥插件，不提交到 Git |
+| DB URL  | 分环境（dev/prod），通过 BuildConfig 常量注入 |
+| Logging | Android 使用 Timber；Spring Boot 使用默认日志 + 分级过滤 |
+
+## 🧪 Testing / 测试
+Android: 建议添加 Instrumentation Tests (`androidTest/`) 与单元测试 (`test/`)。
+Spring Boot: 使用 `@SpringBootTest` + MockMVC 覆盖 REST 层。
+SQLite: 利用 Robolectric 或内存数据库验证 DAO。
+建议执行：
+```bash
+./gradlew test
+./mvnw test
+```
+
+## 🛠 Build / 构建
+| Platform | Command |
+|----------|---------|
+| Android (assemble) | `./gradlew assembleDebug` |
+| Android (lint) | `./gradlew lint` |
+| Spring Boot (jar) | `./mvnw clean package` |
+
+## 🌐 Data Flow / 数据流概述
+Android UI → Repository/DAO → (Local SQLite or Remote API) → Spring Boot Service → MySQL / Response → Android update UI layer.
+
+## 📘 Learning Path / 学习路径
+1. Activity/Fragment 基础 → 2. Intent 传值 → 3. 本地持久化 (SQLite) → 4. 远程交互 (MySQL/HTTP) → 5. Spring Boot 构建 REST API → 6. 综合期末项目整合。
+
+## ⚙️ Technologies / 技术栈
+- Android: Kotlin/Java (本仓库以 Java 为主), Gradle, XML layouts
+- DB: SQLite (本地), MySQL (远程)
+- Backend: Spring Boot 3.x, Maven Wrapper
+- Optional: PHP 辅助脚本 (远程接口桥接)
+
+## 🔄 Migration / 迁移建议
+如需升级到 Kotlin：可逐文件迁移 Activity；引入 `ViewModel + LiveData` 改善可测试性。
+如需引入 Jetpack Compose：从 ActivityAndFragment 模块开始替换 UI。
+
+## 🧩 Extension Ideas / 拓展方向
+- 添加 Room ORM 替换原始 SQLiteOpenHelper
+- 引入 Retrofit + OkHttp 改善网络层
+- 后端增加 JWT 鉴权模块
+- FinalProject 中加入分页与缓存策略
+
+## 🤝 Contributing / 贡献
+1. Fork & 创建分支：`feature/<name>`
+2. 遵循命名：Android 包名小写；后端模块单一职责。
+3. 新增模块请在本 README 的 Modules 表补充。
+4. 提交前运行：
+```bash
+./gradlew clean build || echo "Android build warnings reviewed"
+./mvnw -q test || echo "Spring tests executed"
+```
+
+## 📑 License / 许可证
+参见根目录 `LICENSE`。
 
 ---
+## 中文速览
+1. 使用 Android Studio 打开示例 → 2. 运行 Spring Boot 后端 → 3. 测试本地与远程数据库交互 → 4. 深入期末综合项目结构。
 
-## 中文版本
+---
+## FAQ / 常见问题
+| 问题 | 说明 |
+|------|------|
+| MySQL 连接失败 | 检查防火墙与 JDBC URL；确认端口开放 |
+| Gradle 同步慢 | 切换国内镜像或使用离线缓存 |
+| Spring Boot 启动报错 | JDK 版本不兼容或端口占用 |
 
-# CS-430 项目文档
-## 项目简介
-## 安装方式
-1. 使用 Android Studio 打开项目根目录
-2. 通过 Gradle 构建依赖（各模块位于 `AndroidProgramming101`、`FinalProject` 等子目录）
-3. Spring Boot 后端服务需单独运行（位于 `SpringBoot-Sample` 模块）
-## 使用方法
-### Android 模块
-- **Activity 与 Fragment 示例**：运行 `AndroidProgramming101/ActivityAndFragment` 模块，演示基础组件生命周期与数据绑定
-- **Activity 跳转示例**：通过 `AndroidProgramming101/ActivityJumps` 模块实现多 Activity 间的数据传递与导航
-- **SQLite 操作**：在 `AndroidSQLiteDemo` 模块中查看数据库增删改查实现
-- **MySQL 连接**：通过 `AndroidMySQLDemo` 模块演示 Android 与 MySQL 服务器的网络通信
-### Spring Boot 后端
-1. 进入 `SpringBoot-Sample/complete` 目录
-2. 执行 `./mvnw spring-boot:run` 启动嵌入式 Tomcat 服务器
-3. 通过 `/api/data` 端点进行数据交互（需配合 Android 模块使用）
-## 项目结构说明
-.
-├── AndroidProgramming101
-│   ├── ActivityAndFragment
-│   ├── ActivityJumps
-│   ├── AndroidMySQLDemo
-│   └── AndroidSQLiteDemo
-├── FinalProject
-│   ├── FinalProject
-│   └── Screenshot
-├── Project
-│   ├── 1
-│   ├── 2
-│   ├── 3
-│   ├── 4
-│   ├── 5
-│   └── 7
-├── SQL-Sample
-│   └── SQLite_Insert
-└── SpringBoot-Sample
-    ├── complete
-    └── initial
-## 依赖项
-- Android SDK（含 Architecture Components、Material Design）
-- Spring Boot 2.x（用于后端服务）
-- MySQL JDBC 驱动（`mysql-connector-java`）
-- SQLite Android 库（`androidx.sqlite:sqlite`）
-- PHP 7.x（用于部分脚本开发）
-## 开发与贡献指南
-1. 代码规范：遵循 Android 开发者指南与 Spring Boot 官方编码规范
-2. 提交要求：
-   - 新增功能需包含单元测试（位于 `test` 目录）
-   - 修改现有功能需更新对应模块的 `README.md`
-   - 跨模块依赖需在 `gradle.build` 文件中声明
-3. 贡献流程：
-   - Fork 项目仓库
-   - 创建独立分支（`feature/xxx`）
-   - 提交代码前运行 `./gradlew check` 验证
-   - 提交 Pull Request 时说明变更内容
+## Future / 后续规划
+- [ ] 引入 Room + Repository 模式
+- [ ] 添加简易 CI（构建 + 单元测试）
+- [ ] 增加 Docker 化后端 (MySQL + Spring Boot)
+
